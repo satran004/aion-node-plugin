@@ -1,0 +1,46 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.2.61'
+//    id 'com.gradle.plugin-publish' version '0.9.7'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+dependencies {
+    compileOnly gradleApi()
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.2.61'
+    testCompileOnly gradleTestKit()
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-core:3.6.2'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+group = GROUP
+version = VERSION_NAME
+
+gradlePlugin {
+    plugins {
+        AionNodePlugin {
+            id = 'org.satran.gradle.aionnode-plugin'
+            implementationClass = 'org.satran.gradle.aionnode.NodePlugin'
+        }
+    }
+}
+
+//pluginBundle {
+//    website = POM_URL
+//    vcsUrl = POM_SCM_URL
+//    description = POM_DESCRIPTION
+//    tags = ['aion', 'aion node plugin']
+//
+//    plugins {
+//        aionNodePlugin {
+//            id = 'org.satran.gradle.aionnode'
+//            displayName = POM_NAME
+//            description = POM_DESCRIPTION
+//        }
+//    }
+//}
