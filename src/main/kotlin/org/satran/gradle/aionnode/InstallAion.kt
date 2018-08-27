@@ -1,13 +1,19 @@
 package org.satran.gradle.aionnode
 
+import com.github.kittinunf.fuel.Fuel
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
+import java.io.File
 
-open class DownloadTask: DefaultTask() {
+open class InstallAion: DefaultTask() {
 
     @TaskAction
     fun download() {
-        println("Download task .............")
+
+        println("Install Aion .....")
+
+
     }
+
 
 }
